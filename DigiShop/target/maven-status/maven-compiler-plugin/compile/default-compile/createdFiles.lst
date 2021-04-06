@@ -1,0 +1,5 @@
+hu\unideb\inf\controller\LoginPageController.class
+hu\unideb\inf\MainApp.class
+hu\unideb\inf\model\Cashier.class
+hu\unideb\inf\model\Student.class
+hu\unideb\inf\controller\FXMLStudentsSceneController.class
