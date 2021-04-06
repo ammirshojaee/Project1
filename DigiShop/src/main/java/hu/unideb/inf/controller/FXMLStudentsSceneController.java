@@ -37,7 +37,7 @@ public class FXMLStudentsSceneController implements Initializable {
         entityManager.persist(s);
         entityManager.getTransaction().commit();
     }
-
+//testing
     /**
      * Initializes the controller class.
      */
