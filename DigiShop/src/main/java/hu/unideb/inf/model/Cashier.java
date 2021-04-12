@@ -5,6 +5,9 @@
  */
 package hu.unideb.inf.model;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -20,7 +23,8 @@ public class Cashier {
     @GeneratedValue
     private int id;
     private String name;
-    private int credits;
+    private String Password;
+   
 
     public int getId() {
         return id;
@@ -38,12 +42,21 @@ public class Cashier {
         this.name = name;
     }
 
-    public int getCredits() {
-        return credits;
+    public String getPassword() {
+        return Password;
     }
 
-    public void setCredits(int credits) {
-        this.credits = credits;
+    public void setPassword(String Password) {
+        this.Password = Password;
     }
+
+    public List<String> getList() {
+		if (this.name.length() > 0) {
+			return Arrays.asList(this.name.split(","));
+		}
+		return new ArrayList<>();
+	}
+    
+    
     
 }
