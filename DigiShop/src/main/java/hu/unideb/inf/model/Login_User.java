@@ -17,8 +17,7 @@ import javax.persistence.Id;
  * @author KIMBERLET EPELLE
  */
 @Entity
-public class Cashier {
-    
+public class Login_User {
     @Id
     @GeneratedValue
     private int id;
@@ -27,9 +26,10 @@ public class Cashier {
 
     @Override
     public String toString() {
-        return "Cashier{" + "id=" + id + ", name=" + name + ", Password=" + Password + '}';
+        return "User{" + "id=" + id + ", name=" + name + ", Password=" + Password + '}';
     }
-   
+    
+    
 
     public int getId() {
         return id;
@@ -54,14 +54,11 @@ public class Cashier {
     public void setPassword(String Password) {
         this.Password = Password;
     }
-
+    
     public List<String> getList() {
 		if (this.name.length() > 0) {
 			return Arrays.asList(this.name.split(","));
 		}
 		return new ArrayList<>();
 	}
-    
-    
-    
 }

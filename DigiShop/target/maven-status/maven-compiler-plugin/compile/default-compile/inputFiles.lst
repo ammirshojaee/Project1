@@ -1,5 +1,10 @@
-C:\Users\KIMBERLET EPELLE\Documents\NetBeansProjects\DigiShop\src\main\java\hu\unideb\inf\model\Cashier.java
-C:\Users\KIMBERLET EPELLE\Documents\NetBeansProjects\DigiShop\src\main\java\hu\unideb\inf\controller\LoginPageController.java
-C:\Users\KIMBERLET EPELLE\Documents\NetBeansProjects\DigiShop\src\main\java\hu\unideb\inf\MainApp.java
-C:\Users\KIMBERLET EPELLE\Documents\NetBeansProjects\DigiShop\src\main\java\hu\unideb\inf\controller\FXMLStudentsSceneController.java
-C:\Users\KIMBERLET EPELLE\Documents\NetBeansProjects\DigiShop\src\main\java\hu\unideb\inf\model\Student.java
+C:\Users\KIMBERLET EPELLE\Documents\NetBeansProjects\Project1\DigiShop\src\main\java\hu\unideb\inf\CashierDAO.java
+C:\Users\KIMBERLET EPELLE\Documents\NetBeansProjects\Project1\DigiShop\src\main\java\hu\unideb\inf\model\Cashier.java
+C:\Users\KIMBERLET EPELLE\Documents\NetBeansProjects\Project1\DigiShop\src\main\java\hu\unideb\inf\MainApp.java
+C:\Users\KIMBERLET EPELLE\Documents\NetBeansProjects\Project1\DigiShop\src\main\java\hu\unideb\inf\UserDAO.java
+C:\Users\KIMBERLET EPELLE\Documents\NetBeansProjects\Project1\DigiShop\src\main\java\hu\unideb\inf\controller\LoginPageController.java
+C:\Users\KIMBERLET EPELLE\Documents\NetBeansProjects\Project1\DigiShop\src\main\java\hu\unideb\inf\model\Login_User.java
+C:\Users\KIMBERLET EPELLE\Documents\NetBeansProjects\Project1\DigiShop\src\main\java\hu\unideb\inf\model\Student.java
+C:\Users\KIMBERLET EPELLE\Documents\NetBeansProjects\Project1\DigiShop\src\main\java\hu\unideb\inf\controller\FXMLStudentsSceneController.java
+C:\Users\KIMBERLET EPELLE\Documents\NetBeansProjects\Project1\DigiShop\src\main\java\hu\unideb\inf\JpaUserDAO.java
+C:\Users\KIMBERLET EPELLE\Documents\NetBeansProjects\Project1\DigiShop\src\main\java\hu\unideb\inf\JpaCashierDAO.java
