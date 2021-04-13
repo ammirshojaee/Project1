@@ -24,6 +24,10 @@ public class Login_User {
     private String name;
     private String Password;
 
+    public Login_User() {
+        
+    }
+
     @Override
     public String toString() {
         return "User{" + "id=" + id + ", name=" + name + ", Password=" + Password + '}';

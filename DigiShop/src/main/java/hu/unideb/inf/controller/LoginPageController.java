@@ -18,10 +18,15 @@ import java.util.List;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -33,6 +38,10 @@ import javax.swing.JOptionPane;
  * @author KIMBERLEY EPELLE
  */
 public class LoginPageController implements Initializable {
+    private Stage stage;
+private Scene scene;  
+private Parent root;
+String name="admin";
     @FXML
     private TextField username;
 
@@ -54,40 +63,50 @@ final EntityManagerFactory entityManagerFactory = Persistence.createEntityManage
         a.setPassword(password.getText());
         
         
-        try (UserDAO aDAO= new JpaUserDAO()) {
-            List<Login_User> aList =aDAO.getUser();
-            
-          
-        for (Login_User user: aList ){
-            
-            if(user.getName().equals(a.getName())){
-                
-                 JOptionPane.showMessageDialog(null,"exists");
-                 break;
-            }
-                 else{
-                   JOptionPane.showMessageDialog(null,"does not exist");}
-        }
-           /* 
-               
-               
-               JOptionPane.showMessageDialog(null,"exists");
-              break;
-               }else{
-                   JOptionPane.showMessageDialog(null,"does not exist");
-                  /* entityManager.getTransaction().begin();
-         
-          entityManager.persist(a);
-          entityManager.getTransaction().commit(); aDAO.getUser();
-            System.out.println(user);*/
-          
-            
-             
+        try (UserDAO aDAO= new JpaUserDAO()) {  
+           List<Login_User> aList =aDAO.getUser();
+           /*it goes through the list and if the name is not found nothing
+           happens but if it is, the we check if its an admin login or a cashier
+           then it leads them to their respectful pages
+           */
             for (Login_User user: aList ){
+                if((user.getName().equals(a.getName())&& (user.getPassword().equals(a.getPassword())))==false){
+                    
+                }
+                else{
+                    if((user.getName().equals(name))&&(user.getPassword().equals(name))){
+                   JOptionPane.showMessageDialog(null,"Login Successful");
+                   FXMLLoader loader = new FXMLLoader(LoginPageController.class.getResource("/fxml/FXMLCashierScene.fxml"));
+                    stage=(Stage)((Node)event.getSource()).getScene().getWindow();
+                    scene= new Scene(loader.load());
+                    stage.setScene(scene);
+                    stage.setTitle("Admin Page");
+                    stage.show();
+                    }
+                    
+                    else{
+                    JOptionPane.showMessageDialog(null,"Login Successful");
+                    FXMLLoader loader = new FXMLLoader(LoginPageController.class.getResource("/fxml/FXMLCashierScene.fxml"));
+                    stage=(Stage)((Node)event.getSource()).getScene().getWindow();
+                    scene= new Scene(loader.load());
+                    stage.setScene(scene);
+                    stage.setTitle("Cashier Page");
+                    stage.show();
+                    }
+                }   
+           }
+       
+                
+          
+           for (Login_User user: aList ){
                 System.out.println(user);
             }
-}
+            
+             
+           
     }
+ }      
+    
 
     /**
      * Initializes the controller class.
