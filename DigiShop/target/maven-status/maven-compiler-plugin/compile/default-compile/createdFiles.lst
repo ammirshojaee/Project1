@@ -1,5 +1,10 @@
-hu\unideb\inf\controller\LoginPageController.class
-hu\unideb\inf\MainApp.class
+hu\unideb\inf\model\Login_User.class
+hu\unideb\inf\UserDAO.class
 hu\unideb\inf\model\Cashier.class
 hu\unideb\inf\model\Student.class
+hu\unideb\inf\CashierDAO.class
+hu\unideb\inf\controller\LoginPageController.class
+hu\unideb\inf\JpaUserDAO.class
+hu\unideb\inf\MainApp.class
+hu\unideb\inf\JpaCashierDAO.class
 hu\unideb\inf\controller\FXMLStudentsSceneController.class
