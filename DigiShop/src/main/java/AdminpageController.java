@@ -13,7 +13,7 @@ import javafx.fxml.Initializable;
  *
  * @author bideo
  */
-public class AdminController implements Initializable {
+public class AdminpageController implements Initializable {
 
     /**
      * Initializes the controller class.
