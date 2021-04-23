@@ -76,7 +76,7 @@ final EntityManagerFactory entityManagerFactory = Persistence.createEntityManage
                 else{
                     if((user.getName().equals(name))&&(user.getPassword().equals(name))){
                    JOptionPane.showMessageDialog(null,"Login Successful");
-                   FXMLLoader loader = new FXMLLoader(LoginPageController.class.getResource("/fxml/FXMLCashierScene.fxml"));
+                   FXMLLoader loader = new FXMLLoader(LoginPageController.class.getResource("/fxml/addcashier.fxml"));
                     stage=(Stage)((Node)event.getSource()).getScene().getWindow();
                     scene= new Scene(loader.load());
                     stage.setScene(scene);
