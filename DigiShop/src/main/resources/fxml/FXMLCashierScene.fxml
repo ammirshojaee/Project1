@@ -1,10 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #eeeeee;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #e6e6e6;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <AnchorPane prefHeight="600.0" prefWidth="259.0" style="-fx-background-color: #ffffff;" />
+      <AnchorPane fx:id="Products" prefHeight="606.0" prefWidth="800.0" />
+      <AnchorPane prefHeight="600.0" prefWidth="259.0" style="-fx-background-color: #f2f2f2;">
+         <children>
+            <TextField fx:id="username" layoutX="47.0" layoutY="78.0" prefHeight="24.0" prefWidth="151.0" promptText="Username" style="-fx-background-color: #ffffff; -fx-border-color: #0598ff; -fx-border-width: #0598ff;" text="Search..." />
+            <Text fill="#0598ff" layoutX="48.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DIGISHOP" textAlignment="CENTER" wrappingWidth="151.20000000000005">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+            <Button layoutX="67.0" layoutY="163.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="110.0" style="-fx-background-color: #0598ff;" text="Dashboard">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Button>
+            <Button layoutX="67.0" layoutY="238.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="110.0" style="-fx-background-color: #0598ff;" text="Products">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Button>
+            <Button layoutX="90.0" layoutY="545.0" mnemonicParsing="false" style="-fx-border-color: #0598ff;" text="Sign Out" />
+            <ImageView fitHeight="27.0" fitWidth="30.0" layoutX="32.0" layoutY="161.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Imagesforcashierpage/Dashboard.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="27.0" fitWidth="27.0" layoutX="30.0" layoutY="241.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Imagesforcashierpage/Products.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="21.0" fitWidth="27.0" layoutX="20.0" layoutY="81.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Imagesforcashierpage/Search.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="32.0" fitWidth="35.0" layoutX="51.0" layoutY="543.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Imagesforcashierpage/User.png" />
+               </image>
+            </ImageView>
+         </children></AnchorPane>
    </children>
 </AnchorPane>
