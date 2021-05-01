@@ -1,10 +1,13 @@
 hu\unideb\inf\model\Login_User.class
-AdminpageController.class
+hu\unideb\inf\controller\adminMainController.class
 hu\unideb\inf\model\Cashier.class
+hu\unideb\inf\controller\AddproductController.class
 hu\unideb\inf\model\Category.class
 hu\unideb\inf\CashierDAO.class
 hu\unideb\inf\controller\LoginPageController.class
 hu\unideb\inf\JpaUserDAO.class
+hu\unideb\inf\controller\FXMLloader.class
+hu\unideb\inf\controller\AdminpageController_1.class
 hu\unideb\inf\EmployeeDAO.class
 hu\unideb\inf\controller\AddEmployeeController.class
 hu\unideb\inf\model\AddProducts.class

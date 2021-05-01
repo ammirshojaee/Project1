@@ -25,6 +25,7 @@ public class AddProducts {
     private Long id;
     @Column(nullable=false,unique = true)
     private String name;
+    private String description;
     
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date entryDate;
@@ -66,6 +67,14 @@ public class AddProducts {
 
     
     public AddProducts() {
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
     
     

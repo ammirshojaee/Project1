@@ -10,25 +10,21 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 
 /**
- * FXML Controller class
  *
  * @author KIMBERLET EPELLE
  */
-public class AdminPageController implements Initializable {
-@FXML
+public class adminMainController implements Initializable {
+       @FXML
     private BorderPane MainPane;
-
-  @FXML
-    private Label adminname;
+       
     @FXML
-    void modcashier(ActionEvent event) {
+    void modCashiers(ActionEvent event) {
 System.out.println("You clicked me!");
-   FXMLloader object =new FXMLloader();
+        FXMLloader object =new FXMLloader();
         Pane view = object.getPage("addcashier");
         MainPane.setCenter(view);
     }
@@ -36,13 +32,10 @@ System.out.println("You clicked me!");
     @FXML
     void modprod(ActionEvent event) {
 System.out.println("You clicked me!");
-FXMLloader object =new FXMLloader();
-        Pane view = object.getPage("addproduct");
-        MainPane.setCenter(view);
     }
 
     @FXML
-    void viewcashier(ActionEvent event) {
+    void viewCashiers(ActionEvent event) {
 System.out.println("You clicked me!");
     }
 
@@ -50,20 +43,19 @@ System.out.println("You clicked me!");
     void viewprod(ActionEvent event) {
 System.out.println("You clicked me!");
     }
-@FXML
-    void modcategory(ActionEvent event) {
+    
+        @FXML
+    void tt(ActionEvent event) {
 System.out.println("You clicked me!");
     }
- 
-    /**
+    
+     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-      //  adminname.setText();
         // TODO
-    }    
+    }
 
-   
     
 }
