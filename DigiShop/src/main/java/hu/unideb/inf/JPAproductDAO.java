@@ -50,7 +50,7 @@ final EntityManager entityManager = entityManagerFactory.createEntityManager();
     @Override
     public List<AddProducts> getProducts() {
     TypedQuery<AddProducts> query
-         = entityManager.createQuery("SELECT a FROM Addproducts a",AddProducts.class);
+         = entityManager.createQuery("SELECT a FROM AddProducts a",AddProducts.class);
     List<AddProducts> prod = query.getResultList();
     return prod;
     }
@@ -58,7 +58,7 @@ final EntityManager entityManager = entityManagerFactory.createEntityManager();
     @Override
     public List<Category> getCategory() {
     TypedQuery<Category> query
-              = entityManager.createQuery("SELECT a FROM Categories a",Category.class);
+              = entityManager.createQuery("SELECT a FROM Category a",Category.class);
     List<Category> as = query.getResultList();
     return as;
     }

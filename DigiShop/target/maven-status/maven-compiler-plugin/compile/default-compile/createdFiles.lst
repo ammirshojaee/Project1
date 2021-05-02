@@ -7,7 +7,6 @@ hu\unideb\inf\CashierDAO.class
 hu\unideb\inf\controller\LoginPageController.class
 hu\unideb\inf\JpaUserDAO.class
 hu\unideb\inf\controller\FXMLloader.class
-hu\unideb\inf\controller\AdminpageController_1.class
 hu\unideb\inf\EmployeeDAO.class
 hu\unideb\inf\controller\AddEmployeeController.class
 hu\unideb\inf\model\AddProducts.class

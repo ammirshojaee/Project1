@@ -5,6 +5,7 @@
  */
 package hu.unideb.inf.model;
 
+import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -19,13 +20,17 @@ import javax.persistence.Temporal;
  * @author KIMBERLET EPELLE
  */
 @Entity
-public class AddProducts {
+public class AddProducts implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
     @Column(nullable=false,unique = true)
     private String name;
     private String description;
+    @Column(nullable=false)
+    private double price;
+     @Column(nullable=false)
+    private int Quantity;
     
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date entryDate;
@@ -75,6 +80,27 @@ public class AddProducts {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public int getQuantity() {
+        return Quantity;
+    }
+
+    public void setQuantity(int Quantity) {
+        this.Quantity = Quantity;
+    }
+
+    @Override
+    public String toString() {
+        return "Products{" + "id=" + id + ", name=" + name + ", description=" + description + ", price=" + price + ", Quantity=" + Quantity + ", entryDate=" + entryDate + ", category=" + category + '}';
     }
     
     
