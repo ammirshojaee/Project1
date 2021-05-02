@@ -74,14 +74,17 @@ final EntityManagerFactory entityManagerFactory = Persistence.createEntityManage
                     
                 }
                 else{
-                    if((user.getName().equals(name))&&(user.getPassword().equals(name))){
+                    if(user.getPassword().equalsIgnoreCase(name)){
                    JOptionPane.showMessageDialog(null,"Login Successful");
-                   FXMLLoader loader = new FXMLLoader(LoginPageController.class.getResource("/fxml/FXMLCashierScene.fxml"));
+                   FXMLLoader loader = new FXMLLoader(LoginPageController.class.getResource("/fxml/admin2.fxml"));
+                   //getadname(user.getName());
                     stage=(Stage)((Node)event.getSource()).getScene().getWindow();
+                   
                     scene= new Scene(loader.load());
                     stage.setScene(scene);
                     stage.setTitle("Admin Page");
                     stage.show();
+                    
                     }
                     
                     else{
@@ -113,7 +116,13 @@ final EntityManagerFactory entityManagerFactory = Persistence.createEntityManage
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        
         // TODO
     }    
+
+    public String getadname(String name) {
+       String sname=name;
+       return sname;
+    }
     
 }
