@@ -1,4 +1,5 @@
 hu\unideb\inf\model\Login_User.class
+AdminpageController.class
 hu\unideb\inf\UserDAO.class
 hu\unideb\inf\model\Cashier.class
 hu\unideb\inf\controller\FXMLCashierSceneController.class
