@@ -30,12 +30,18 @@ import org.h2.engine.User;
  * @author KIMBERLET EPELLE
  */
 public class AddEmployeeController implements Initializable  {
-     ObservableList klist= FXCollections.observableArrayList();
+    ObservableList klist= FXCollections.observableArrayList();
+    ObservableList statusList= FXCollections.observableArrayList();
     private void loadData(){
     klist.removeAll(klist);
     RankType a=RankType.Admin;
     RankType b=RankType.Cashier;
+    String c= "Single";
+    String d= "Married";
+    String e= "Complicated";
     klist.addAll(a,b);
+    statusList.addAll(c,d,e);
+    mstatus.getItems().addAll(statusList);
     rank.getItems().addAll(klist);
     }
     
@@ -58,7 +64,7 @@ public class AddEmployeeController implements Initializable  {
     private DatePicker dob;
 
     @FXML
-    private TextField mstatus;
+    private ComboBox<String> mstatus;
 
     @FXML
     private RadioButton m;
@@ -99,8 +105,9 @@ public class AddEmployeeController implements Initializable  {
         red.setEmail(mail.getText());
         red.setPosition(rank.getValue());
         red.setDob(current);
+        red.setStatus(mstatus.getValue());
         
-         try (EmployeeDAO aDAO= new JpaEmployeeDAO()){
+        try (EmployeeDAO aDAO= new JpaEmployeeDAO()){
          aDAO.saveEmployee(red);
          String u1;
          String u2;

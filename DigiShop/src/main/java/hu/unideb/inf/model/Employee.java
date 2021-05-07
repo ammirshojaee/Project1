@@ -46,6 +46,9 @@ public class Employee implements Serializable {
     @Column(nullable = false)
     private String city;
     
+    @Column(nullable = false)
+    private String status;
+    
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date dob;
     @Temporal(javax.persistence.TemporalType.DATE)
@@ -129,6 +132,14 @@ public class Employee implements Serializable {
     public void setSurname(String surname) {
         this.surname = surname;
     }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
     
     public enum RankType{
    Admin, Cashier;
@@ -147,8 +158,14 @@ public class Employee implements Serializable {
 
     @Override
     public String toString() {
-        return "Employee{" + "id=" + id + ", name=" + name + ", gender=" + gender + ", address=" + address + ", email=" + email + ", city=" + city + ", dob=" + dob + ", employmentDate=" + employmentDate + ", position=" + position + '}';
+        return "Employee{" + "id=" + id + ", name=" + name + ", surname=" + surname 
+                + ", gender=" + gender + ", address=" 
+                + address + ", email=" + email + ", city=" 
+                + city + ", status=" + status + ", dob=" 
+                + dob + ", employmentDate=" 
+                + employmentDate + ", position=" + position + '}';
     }
+
     
     
 }
