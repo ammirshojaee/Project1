@@ -31,12 +31,12 @@ System.out.println("You clicked me!");
 
     @FXML
     void modprod(ActionEvent event) {
-System.out.println("You clicked me!");
+    System.out.println("You clicked me!");
     }
 
     @FXML
     void viewCashiers(ActionEvent event) {
-System.out.println("You clicked me!");
+    System.out.println("You clicked me!");
     }
 
     @FXML
