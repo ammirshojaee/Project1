@@ -66,7 +66,11 @@ public class AdminPageController implements Initializable {
 
     @FXML
     void viewprod(ActionEvent event) {
-    System.out.println("You clicked me!");
+    
+     System.out.println("You clicked me!");
+    FXMLloader object =new FXMLloader();
+    Pane view = object.getPage("viewProducts");
+    MainPane.setCenter(view);
     }
     
     @FXML

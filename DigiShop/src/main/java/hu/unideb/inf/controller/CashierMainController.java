@@ -51,7 +51,7 @@ System.out.println("You clicked me!");
     void viewproducts(ActionEvent event) {
   System.out.println("You clicked me!");
     FXMLloader object =new FXMLloader();
-    Pane view = object.getPage("FXMLCashierScene");
+    Pane view = object.getPage("viewProducts");
     MainPane.setCenter(view);
     }
 
