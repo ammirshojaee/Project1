@@ -26,7 +26,7 @@
                   <Font name="System Bold" size="13.0" />
                </font>
             </Button>
-            <Button fx:id="Products" layoutX="67.0" layoutY="238.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="110.0" style="-fx-background-color: #0598ff;" text="Products">
+            <Button fx:id="Products" layoutX="67.0" layoutY="238.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="26.0" prefWidth="110.0" style="-fx-background-color: #0598ff;" text="Products">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
