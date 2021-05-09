@@ -55,57 +55,71 @@ String name="admin";
 
     @FXML
     void pushedLogin(ActionEvent event) throws Exception{
-final EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("br.com.fredericci.pu");
+        final EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("br.com.fredericci.pu");
         final EntityManager entityManager = entityManagerFactory.createEntityManager();
         
-         Login_User a=new Login_User();
+        Login_User a=new Login_User();
         a.setName(username.getText());
         a.setPassword(password.getText());
         
         
         try (UserDAO aDAO= new JpaUserDAO()) {  
-           List<Login_User> aList =aDAO.getUser();
-           /*it goes through the list and if the name is not found nothing
+         /*it goes through the list and if the name is not found nothing
            happens but if it is, the we check if its an admin login or a cashier
            then it leads them to their respectful pages
            */
+           List<Login_User> aList =aDAO.getUser();
+           boolean found = false;
             for (Login_User user: aList ){
                 if((user.getName().equals(a.getName())&& (user.getPassword().equals(a.getPassword())))==false){
-                    
+                     found = false;
                 }
                 else{
-                    if((user.getName().equals(name))&&(user.getPassword().equals(name))){
-                   JOptionPane.showMessageDialog(null,"Login Successful");
-                   FXMLLoader loader = new FXMLLoader(LoginPageController.class.getResource("/fxml/FXMLCashierScene.fxml"));
+                    if(user.getPassword().equalsIgnoreCase(name)){
+                    JOptionPane.showMessageDialog(null,"Login Successful");
+                   FXMLLoader loader = new FXMLLoader(LoginPageController.class.getResource("/fxml/admin2.fxml"));
                     stage=(Stage)((Node)event.getSource()).getScene().getWindow();
                     scene= new Scene(loader.load());
                     stage.setScene(scene);
                     stage.setTitle("Admin Page");
                     stage.show();
+                    found =true;
+                    break;
+                    }
+                    else if(user.getEmployee().getPosition().toString().equalsIgnoreCase(name)){
+                   JOptionPane.showMessageDialog(null,"Login Successful");
+                   FXMLLoader loader = new FXMLLoader(LoginPageController.class.getResource("/fxml/admin2.fxml"));
+                    stage=(Stage)((Node)event.getSource()).getScene().getWindow();
+                    scene= new Scene(loader.load());
+                    stage.setScene(scene);
+                    stage.setTitle("Admin Page");
+                    stage.show();
+                    found =true;
+                    break;
+                    
                     }
                     
                     else{
                     JOptionPane.showMessageDialog(null,"Login Successful");
-                    FXMLLoader loader = new FXMLLoader(LoginPageController.class.getResource("/fxml/FXMLCashierScene.fxml"));
+                    FXMLLoader loader = new FXMLLoader(LoginPageController.class.getResource("/fxml/CashierMain.fxml"));
                     stage=(Stage)((Node)event.getSource()).getScene().getWindow();
                     scene= new Scene(loader.load());
                     stage.setScene(scene);
                     stage.setTitle("Cashier Page");
                     stage.show();
+                    found =true;
+                    break;
                     }
                 }   
-           }
-       
-                
-          
-           for (Login_User user: aList ){
+            }
+        if(found==false){
+            JOptionPane.showMessageDialog(null, "not available");
+        }
+        for (Login_User user: aList ){
                 System.out.println(user);
             }
-            
-             
-           
-    }
- }      
+        }
+    }      
     
 
     /**
@@ -113,7 +127,13 @@ final EntityManagerFactory entityManagerFactory = Persistence.createEntityManage
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        
         // TODO
     }    
+
+    public String getadname(String name) {
+       String sname=name;
+       return sname;
+    }
     
 }

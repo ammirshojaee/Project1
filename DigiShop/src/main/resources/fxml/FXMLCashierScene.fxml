@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.unideb.inf.controller.FXMLCashierSceneController">
+   <top>
+      <HBox prefHeight="60.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <GridPane prefHeight="78.0" prefWidth="597.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="74.0" minWidth="10.0" prefWidth="58.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="125.0" minWidth="10.0" prefWidth="125.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="78.0" minWidth="10.0" prefWidth="78.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="136.0" minWidth="10.0" prefWidth="59.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="89.0" minWidth="8.0" prefWidth="50.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="113.0" minWidth="10.0" prefWidth="113.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="111.0" minWidth="10.0" prefWidth="62.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="81.0" minWidth="10.0" prefWidth="61.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="Product">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="pdname" prefHeight="30.0" prefWidth="40.0" GridPane.columnIndex="1">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <Spinner fx:id="counter" editable="true" layoutX="10.0" layoutY="10.0" prefHeight="25.0" prefWidth="58.0" GridPane.columnIndex="3" />
+                  <Button mnemonicParsing="false" onAction="#addbtn" text="add" GridPane.columnIndex="7" />
+                  <TextField fx:id="pdPrice" prefHeight="30.0" prefWidth="22.0" GridPane.columnIndex="5">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <Button layoutX="535.0" layoutY="48.0" mnemonicParsing="false" onAction="#searchbtn" text="search" GridPane.columnIndex="6" />
+                  <Label layoutX="10.0" layoutY="50.0" text="Quantity demanded" wrapText="true" GridPane.columnIndex="2">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets left="7.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="50.0" text="Price" GridPane.columnIndex="4">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <padding>
+                        <Insets left="7.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </GridPane>
+         </children>
+      </HBox>
+   </top>
+   <left>
+      <TableView fx:id="purchasetable" prefHeight="314.0" prefWidth="416.0" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn fx:id="pid" prefWidth="75.0" text="ID" />
+          <TableColumn fx:id="pname" prefWidth="75.0" text="NAME" />
+            <TableColumn fx:id="qdemand" prefWidth="75.0" text="QUANTITY" />
+            <TableColumn fx:id="pricedemand" prefWidth="75.0" text="AMOUNT" />
+        </columns>
+      </TableView>
+   </left>
+   <bottom>
+      <HBox prefHeight="26.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="total">
+               <padding>
+                  <Insets left="20.0" right="20.0" />
+               </padding>
+            </Label>
+            <TextField fx:id="total" />
+            <Button mnemonicParsing="false" onAction="#printreceipt" prefHeight="25.0" prefWidth="132.0" text="Print" />
+         </children>
+      </HBox>
+   </bottom>
+   <right>
+      <TextArea fx:id="receipt" editable="false" prefHeight="314.0" prefWidth="282.0" BorderPane.alignment="CENTER">
+         <opaqueInsets>
+            <Insets left="20.0" />
+         </opaqueInsets>
+      </TextArea>
+   </right>
+</BorderPane>
