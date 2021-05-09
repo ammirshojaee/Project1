@@ -25,3 +25,8 @@ hu\unideb\inf\MainApp.class
 hu\unideb\inf\JpaCashierDAO.class
 hu\unideb\inf\controller\AdminPageController.class
 hu\unideb\inf\model\Product_Group.class
+hu\unideb\inf\controller\CashierdashboardController.class
+hu\unideb\inf\controller\CashierproductspageController.class
+
+
+
