@@ -76,10 +76,14 @@ String name="admin";
                 }
                 else{
                     if(user.getPassword().equalsIgnoreCase(name)){
-                    JOptionPane.showMessageDialog(null,"Login Successful");
+                   JOptionPane.showMessageDialog(null,"Login Successful");
+                    
                    FXMLLoader loader = new FXMLLoader(LoginPageController.class.getResource("/fxml/admin2.fxml"));
+                    
                     stage=(Stage)((Node)event.getSource()).getScene().getWindow();
                     scene= new Scene(loader.load());
+                    hu.unideb.inf.controller.AdminPageController admincontrol =loader.getController();
+                    admincontrol.show(a.getName());
                     stage.setScene(scene);
                     stage.setTitle("Admin Page");
                     stage.show();
@@ -89,8 +93,10 @@ String name="admin";
                     else if(user.getEmployee().getPosition().toString().equalsIgnoreCase(name)){
                    JOptionPane.showMessageDialog(null,"Login Successful");
                    FXMLLoader loader = new FXMLLoader(LoginPageController.class.getResource("/fxml/admin2.fxml"));
-                    stage=(Stage)((Node)event.getSource()).getScene().getWindow();
+                  stage=(Stage)((Node)event.getSource()).getScene().getWindow();
                     scene= new Scene(loader.load());
+                    hu.unideb.inf.controller.AdminPageController admincontrol =loader.getController();
+                    admincontrol.show(a.getName());
                     stage.setScene(scene);
                     stage.setTitle("Admin Page");
                     stage.show();
@@ -104,6 +110,8 @@ String name="admin";
                     FXMLLoader loader = new FXMLLoader(LoginPageController.class.getResource("/fxml/CashierMain.fxml"));
                     stage=(Stage)((Node)event.getSource()).getScene().getWindow();
                     scene= new Scene(loader.load());
+                    hu.unideb.inf.controller.CashierMainController cashcontrol =loader.getController();
+                    cashcontrol.show(a.getName());
                     stage.setScene(scene);
                     stage.setTitle("Cashier Page");
                     stage.show();

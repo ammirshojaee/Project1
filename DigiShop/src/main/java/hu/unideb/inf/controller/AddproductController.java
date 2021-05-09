@@ -61,7 +61,7 @@ Date currentdate=new Date();
        dew.setPrice(Double.parseDouble(price.getText()));
        dew.setQuantity(Integer.parseInt(pQuantity.getText()));
        dew.setEntryDate(currentdate);
-       
+       boolean found=false;
        try (ProductDAO aDAO= new JPAproductDAO()){
        aDAO.saveProduct(dew);
        List<Category> kList =aDAO.getCategory();
@@ -69,8 +69,18 @@ Date currentdate=new Date();
                if(cat.getCatName().equals(category.getValue())){
                cat.getProducts().add(dew);
                ((JPAproductDAO)aDAO).saveCategory(cat);
+               found=true;
                }
                 }
+         if(found==false){
+              Category red =new Category();
+              red.setCatName(category.getValue());
+              red.getProducts().add(dew);
+              ((JPAproductDAO)aDAO).saveCategory(red);
+              
+              
+         
+         }
        }
     }
 
@@ -111,7 +121,7 @@ try (ProductDAO aDAO= new JPAproductDAO()){
 
     @FXML
     void updateProd(ActionEvent event) throws Exception {
- /*AddProducts dew= new AddProducts();
+    AddProducts dew= new AddProducts();
        dew.setName(pname.getText());
        dew.setDescription(pdescription.getText());
        dew.setPrice(Double.parseDouble(price.getText()));
@@ -127,7 +137,7 @@ try (ProductDAO aDAO= new JPAproductDAO()){
                ((JPAproductDAO)aDAO).saveCategory(cat);
                }
                 }
-       }*/
+       }
     }
     /**
      * Initializes the controller class.

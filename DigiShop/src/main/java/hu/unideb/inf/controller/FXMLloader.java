@@ -25,6 +25,7 @@ public Pane getPage(String fileName){
     
         }
         view=new FXMLLoader().load(fileURL);
+      
     }
     catch(Exception e){
         System.out.println("No page "+fileName +" please check FXMLloader.");
@@ -33,3 +34,4 @@ return view;
 }
      
 }
+
