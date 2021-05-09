@@ -15,7 +15,7 @@ import javafx.fxml.Initializable;
  *
  * @author KIMBERLET EPELLE
  */
-public class FXMLCashierSceneController implements Initializable {
+public class cashier_page implements Initializable {
 
     /**
      * Initializes the controller class.
