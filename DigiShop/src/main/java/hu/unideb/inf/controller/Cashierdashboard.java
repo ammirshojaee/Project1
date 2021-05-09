@@ -15,7 +15,7 @@ import javafx.fxml.Initializable;
  *
  * @author KIMBERLET EPELLE
  */
-public class cashier_page implements Initializable {
+public class Cashierdashboard implements Initializable {
 
     /**
      * Initializes the controller class.
