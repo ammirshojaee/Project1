@@ -1,55 +1,107 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #e6e6e6;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
-   <children>
-      <AnchorPane fx:id="Products" prefHeight="606.0" prefWidth="800.0" />
-      <AnchorPane prefHeight="600.0" prefWidth="259.0" style="-fx-background-color: #f2f2f2;">
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.unideb.inf.controller.FXMLCashierSceneController">
+   <top>
+      <HBox prefHeight="60.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <TextField fx:id="username" layoutX="47.0" layoutY="78.0" prefHeight="24.0" prefWidth="151.0" promptText="Username" style="-fx-background-color: #ffffff; -fx-border-color: #0598ff; -fx-border-width: #0598ff;" text="Search..." />
-            <Text fill="#0598ff" layoutX="48.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DIGISHOP" textAlignment="CENTER" wrappingWidth="151.20000000000005">
-               <font>
-                  <Font size="24.0" />
-               </font>
-            </Text>
-            <Button layoutX="67.0" layoutY="163.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="110.0" style="-fx-background-color: #0598ff;" text="Dashboard">
-               <font>
-                  <Font name="System Bold" size="13.0" />
-               </font>
-            </Button>
-            <Button layoutX="67.0" layoutY="238.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="110.0" style="-fx-background-color: #0598ff;" text="Products">
-               <font>
-                  <Font name="System Bold" size="13.0" />
-               </font>
-            </Button>
-            <Button layoutX="90.0" layoutY="545.0" mnemonicParsing="false" style="-fx-border-color: #0598ff;" text="Sign Out" />
-            <ImageView fitHeight="27.0" fitWidth="30.0" layoutX="32.0" layoutY="161.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@Imagesforcashierpage/Dashboard.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="27.0" fitWidth="27.0" layoutX="30.0" layoutY="241.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@Imagesforcashierpage/Products.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="21.0" fitWidth="27.0" layoutX="20.0" layoutY="81.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@Imagesforcashierpage/Search.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="32.0" fitWidth="35.0" layoutX="51.0" layoutY="543.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@Imagesforcashierpage/User.png" />
-               </image>
-            </ImageView>
-         </children></AnchorPane>
-   </children>
-</AnchorPane>
+            <GridPane prefHeight="78.0" prefWidth="597.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="74.0" minWidth="10.0" prefWidth="58.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="125.0" minWidth="10.0" prefWidth="125.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="78.0" minWidth="10.0" prefWidth="78.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="136.0" minWidth="10.0" prefWidth="59.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="89.0" minWidth="8.0" prefWidth="50.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="113.0" minWidth="10.0" prefWidth="113.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="111.0" minWidth="10.0" prefWidth="62.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="81.0" minWidth="10.0" prefWidth="61.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="Product">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="pdname" prefHeight="30.0" prefWidth="40.0" GridPane.columnIndex="1">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <Spinner fx:id="counter" editable="true" layoutX="10.0" layoutY="10.0" prefHeight="25.0" prefWidth="58.0" GridPane.columnIndex="3" />
+                  <Button mnemonicParsing="false" onAction="#addbtn" text="add" GridPane.columnIndex="7" />
+                  <TextField fx:id="pdPrice" prefHeight="30.0" prefWidth="22.0" GridPane.columnIndex="5">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <Button layoutX="535.0" layoutY="48.0" mnemonicParsing="false" onAction="#searchbtn" text="search" GridPane.columnIndex="6" />
+                  <Label layoutX="10.0" layoutY="50.0" text="Quantity demanded" wrapText="true" GridPane.columnIndex="2">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets left="7.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="50.0" text="Price" GridPane.columnIndex="4">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <padding>
+                        <Insets left="7.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </GridPane>
+         </children>
+      </HBox>
+   </top>
+   <left>
+      <TableView fx:id="purchasetable" prefHeight="314.0" prefWidth="416.0" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn fx:id="pid" prefWidth="75.0" text="ID" />
+          <TableColumn fx:id="pname" prefWidth="75.0" text="NAME" />
+            <TableColumn fx:id="qdemand" prefWidth="75.0" text="QUANTITY" />
+            <TableColumn fx:id="pricedemand" prefWidth="75.0" text="AMOUNT" />
+        </columns>
+      </TableView>
+   </left>
+   <bottom>
+      <HBox prefHeight="26.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="total">
+               <padding>
+                  <Insets left="20.0" right="20.0" />
+               </padding>
+            </Label>
+            <TextField fx:id="total" />
+            <Button mnemonicParsing="false" onAction="#printreceipt" prefHeight="25.0" prefWidth="132.0" text="Print" />
+         </children>
+      </HBox>
+   </bottom>
+   <right>
+      <TextArea fx:id="receipt" editable="false" prefHeight="314.0" prefWidth="282.0" BorderPane.alignment="CENTER">
+         <opaqueInsets>
+            <Insets left="20.0" />
+         </opaqueInsets>
+      </TextArea>
+   </right>
+</BorderPane>
