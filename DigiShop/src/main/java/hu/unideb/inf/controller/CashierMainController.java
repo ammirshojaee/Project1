@@ -14,6 +14,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
@@ -27,6 +28,28 @@ public class CashierMainController implements Initializable {
     
     @FXML
     private BorderPane MainPane;
+    @FXML
+    private Label cashname;
+    String sendname;
+    public void show(String nme){
+    cashname.setText("Welcome, "+nme);
+    sendname=nme;
+  }
+    
+    @FXML
+    void viewprofile(ActionEvent event) throws IOException {
+       System.out.println("You clicked me!");
+      
+    FXMLLoader loader = new FXMLLoader(LoginPageController.class.getResource("/fxml/Profile.fxml"));
+    Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+       MainPane.setCenter(loader.load());
+       hu.unideb.inf.controller.ProfileController pcc = loader.getController();
+       pcc.sname(sendname);
+    stage.setTitle("LoginPage");
+    stage.show();
+       
+       
+  }
     
       @FXML
     void checkout(ActionEvent event) {
