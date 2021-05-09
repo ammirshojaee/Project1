@@ -111,7 +111,7 @@ try (ProductDAO aDAO= new JPAproductDAO()){
 
     @FXML
     void updateProd(ActionEvent event) throws Exception {
- /*AddProducts dew= new AddProducts();
+    AddProducts dew= new AddProducts();
        dew.setName(pname.getText());
        dew.setDescription(pdescription.getText());
        dew.setPrice(Double.parseDouble(price.getText()));
@@ -127,7 +127,7 @@ try (ProductDAO aDAO= new JPAproductDAO()){
                ((JPAproductDAO)aDAO).saveCategory(cat);
                }
                 }
-       }*/
+       }
     }
     /**
      * Initializes the controller class.

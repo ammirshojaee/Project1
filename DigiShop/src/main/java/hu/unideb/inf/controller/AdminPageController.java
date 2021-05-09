@@ -31,6 +31,8 @@ public class AdminPageController implements Initializable {
 
     @FXML
     private Label adminname;
+    
+  
   
     @FXML
     void goBack(ActionEvent event) throws IOException {
@@ -41,6 +43,7 @@ public class AdminPageController implements Initializable {
     stage.setScene(scene);
     stage.setTitle("LoginPage");
     stage.show();
+    
     }
   
     @FXML
@@ -49,6 +52,7 @@ public class AdminPageController implements Initializable {
     FXMLloader object =new FXMLloader();
     Pane view = object.getPage("addcashier");
     MainPane.setCenter(view);
+   
     }
 
     @FXML
@@ -62,6 +66,9 @@ public class AdminPageController implements Initializable {
     @FXML
     void viewcashier(ActionEvent event) {
     System.out.println("You clicked me!");
+    FXMLloader object =new FXMLloader();
+    Pane view = object.getPage("viewCashiers");
+    MainPane.setCenter(view);
     }
 
     @FXML
@@ -72,7 +79,17 @@ public class AdminPageController implements Initializable {
     Pane view = object.getPage("viewProducts");
     MainPane.setCenter(view);
     }
-    
+    String sendname;
+     @FXML
+    void viewprofile(ActionEvent event) throws IOException {
+ FXMLLoader loader = new FXMLLoader(LoginPageController.class.getResource("/fxml/Profile.fxml"));
+    Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+       MainPane.setCenter(loader.load());
+       hu.unideb.inf.controller.ProfileController pcc = loader.getController();
+       pcc.sname(sendname);
+    stage.setTitle("LoginPage");
+    stage.show();
+    }
     @FXML
     void modcategory(ActionEvent event) {
     System.out.println("You clicked me!");
@@ -83,10 +100,14 @@ public class AdminPageController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+    
       //  adminname.setText();
         // TODO
     }    
 
-   
+         public void show(String nme){
+    adminname.setText("Welcome, "+nme);
+    sendname=nme;
+    }
     
 }

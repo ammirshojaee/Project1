@@ -46,7 +46,7 @@ final EntityManager entityManager = entityManagerFactory.createEntityManager();
     @Override
     public List<Employee> getEmployee() {
       TypedQuery<Employee> query
-              = entityManager.createQuery("SELECT a FROM Employees a",Employee.class);
+              = entityManager.createQuery("SELECT a FROM Employee a",Employee.class);
     List<Employee> as = query.getResultList();
     return as;
     }

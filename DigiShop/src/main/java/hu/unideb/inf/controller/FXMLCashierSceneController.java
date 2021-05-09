@@ -18,6 +18,8 @@ import java.util.List;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -38,10 +40,10 @@ import javax.swing.JOptionPane;
 public class FXMLCashierSceneController implements Initializable {
     
      public void billheader(){
-       receipt.setText("---------------------------------------------"+"\n"
+       receipt.setText("====================================================="+"\n"
                + "DIGISHOP"+"\n"
-               + "------------------------------------------------"+"\n"+
-               "Product Name-------------Price"+"\n");
+               + "========================================================="+"\n"+
+                "Product Name               Price"+"\n");
         }
      public void billfooter(){
      
@@ -81,6 +83,9 @@ public class FXMLCashierSceneController implements Initializable {
     @FXML
     private TableColumn<AddProducts, Double> pricedemand;
 double sum=0;
+int N=0;
+ ObservableList<AddProducts> data =FXCollections.observableArrayList();
+
     @FXML
     void addbtn(ActionEvent event) throws Exception{
         
@@ -90,25 +95,30 @@ try (ProductDAO aDAO= new JPAproductDAO()){
            for (AddProducts prod: aList ){
                if(prod.getName().equalsIgnoreCase(pdname.getText())){
                   pdPrice.setText(String.valueOf(prod.getPrice()));
+                int re=prod.getQuantity();
                    int a=counter.getValue();
                    double d=prod.getPrice()*a;
-                  prod.setPrice(d);
-                  prod.setQuantity(a);
+                 prod.setPrice(d);
+                 prod.setQuantity(a);
                    
                pid.setCellValueFactory(new PropertyValueFactory<>("id"));
                pname.setCellValueFactory(new PropertyValueFactory<>("name"));
               pricedemand.setCellValueFactory(new PropertyValueFactory<>("price"));
               qdemand.setCellValueFactory(new PropertyValueFactory<>("Quantity"));
-               
+               data.add(prod);
                purchasetable.getItems().add(prod);
                sum=sum+d;
                total.setText(String.valueOf(sum));
                receipt.setText(receipt.getText()+prod.getName()+"\t\t\t"
                        +String.valueOf(prod.getPrice())+"\n");
+              
+                   System.out.println(re);
+           
                 break;
                }
+               
             }
-           
+          
     }
     }
 
@@ -119,11 +129,23 @@ try (ProductDAO aDAO= new JPAproductDAO()){
         List<AddProducts> aList =aDAO.getProducts();
            for (AddProducts prod: aList ){
                if(prod.getName().equalsIgnoreCase(pdname.getText())){
+                   JOptionPane.showMessageDialog(null, "Number of products available: "+prod.getQuantity());
                    pdPrice.setText(String.valueOf(prod.getPrice()));
-SpinnerValueFactory<Integer> countervalue=new SpinnerValueFactory.IntegerSpinnerValueFactory(0, prod.getQuantity(), 1);
-this.counter.setValueFactory(countervalue);
+                   N=prod.getQuantity();
+                   
 
-            found=true;
+
+SpinnerValueFactory<Integer> countervalue=new SpinnerValueFactory.IntegerSpinnerValueFactory(0, N, 1);
+
+this.counter.setValueFactory(countervalue);
+SpinnerValueFactory.IntegerSpinnerValueFactory intFactory =
+        (SpinnerValueFactory.IntegerSpinnerValueFactory) counter.getValueFactory();
+int imin = intFactory.getMin(); // 0
+int imax = intFactory.getMax(); // 10
+int istep = intFactory.getAmountToStepBy();
+                   System.out.println(imax);
+
+                found=true;
                 break;
                }
             }
@@ -136,8 +158,21 @@ this.counter.setValueFactory(countervalue);
     
     
     @FXML
-    void printreceipt(ActionEvent event) {
+    void printreceipt(ActionEvent event) throws Exception{
         Date cur=new Date();
+        int input=  JOptionPane.showConfirmDialog(null, "Would you like to continue?");
+      if(input==0){
+        try (ProductDAO aDAO= new JPAproductDAO()) {
+        List<AddProducts> aList =aDAO.getProducts();
+           for (AddProducts prod: aList ){
+             for(AddProducts dd: data){
+                     if(prod.getId().equals(dd.getId())) {
+              int k=prod.getQuantity()-dd.getQuantity();
+                         prod.setQuantity(k) ;
+                       aDAO.updateProduct(prod);
+                                System.out.println( k) ;}
+             } 
+           }}
         
 receipt.setText(receipt.getText()+"========================="+"\n"+
         "Total:"+"\t\t\t"+total.getText()+"\n"+"========================="+"\n"+cur.toString());
@@ -147,6 +182,13 @@ receipt.setText(receipt.getText()+"========================="+"\n"+
              Logger.getLogger(FXMLCashierSceneController.class.getName()).log(Level.SEVERE, null, ex);
          }
 
+    }
+      else if(input==1){
+      
+      }
+      else{
+      
+      }
     }
 
     /**
@@ -158,11 +200,12 @@ receipt.setText(receipt.getText()+"========================="+"\n"+
         // TODO
     }    
     public static void print(String n) throws FileNotFoundException {
-        JOptionPane.showConfirmDialog(null, "Would you like to continue?");
+      
         String k= System.getProperty("user.home");
         PrintWriter pw =new PrintWriter(new File(k,"/Desktop/receipt.txt"));
         pw.println(n);
         pw.close();
+      
         
     }
 }
