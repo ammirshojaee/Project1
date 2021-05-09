@@ -30,6 +30,7 @@ public class MainApp extends Application {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        
         try {
             startDatabase();
         } catch (SQLException ex) {
