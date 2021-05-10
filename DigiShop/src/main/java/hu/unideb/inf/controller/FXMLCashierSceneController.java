@@ -79,7 +79,8 @@ public class FXMLCashierSceneController implements Initializable {
     private TableColumn<AddProducts, Integer> qdemand;
 
     
-    
+        @FXML
+    private TextField pidtext;
     
     @FXML
     private TableColumn<AddProducts, Double> pricedemand;
@@ -119,6 +120,10 @@ try (ProductDAO aDAO= new JPAproductDAO()){
                }
                
             }
+           pdname.setText("");
+           pidtext.setText("");
+           pdPrice.setText("");
+           
           
     }
     }
@@ -128,28 +133,32 @@ try (ProductDAO aDAO= new JPAproductDAO()){
     boolean found = false;
     try (ProductDAO aDAO= new JPAproductDAO()){
         List<AddProducts> aList =aDAO.getProducts();
+        Long num;
+        if(pidtext.getText().isEmpty()){
+        num=null;
+        }else{
+        num=Long.parseLong(pidtext.getText());
+        }
            for (AddProducts prod: aList ){
-               if(prod.getName().equalsIgnoreCase(pdname.getText())){
+       if((prod.getId().equals(num))||(prod.getName().equalsIgnoreCase(pdname.getText()))==true){
                    JOptionPane.showMessageDialog(null, "Number of products available: "+prod.getQuantity());
                    pdPrice.setText(String.valueOf(prod.getPrice()));
                    N=prod.getQuantity();
-                   
-
+                   pdname.setText(prod.getName());
+                   pidtext.setText(prod.getId().toString());
 
 SpinnerValueFactory<Integer> countervalue=new SpinnerValueFactory.IntegerSpinnerValueFactory(0, N, 1);
-
 this.counter.setValueFactory(countervalue);
 SpinnerValueFactory.IntegerSpinnerValueFactory intFactory =
         (SpinnerValueFactory.IntegerSpinnerValueFactory) counter.getValueFactory();
 int imin = intFactory.getMin(); // 0
 int imax = intFactory.getMax(); // 10
 int istep = intFactory.getAmountToStepBy();
-                   System.out.println(imax);
-
-                found=true;
-                break;
-               }
+    System.out.println(imax);
+            found=true;
+            break;
             }
+    }
            
     }
     if(found==false){
@@ -214,4 +223,5 @@ receipt.setText(receipt.getText()+"========================="+"\n"+
       
         
     }
+
 }

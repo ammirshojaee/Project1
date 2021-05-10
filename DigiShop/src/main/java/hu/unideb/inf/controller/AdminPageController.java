@@ -33,6 +33,10 @@ public class AdminPageController implements Initializable {
     private Label adminname;
     
   
+    @FXML
+    void dashview(ActionEvent event) throws IOException {
+
+    }
   
     @FXML
     void goBack(ActionEvent event) throws IOException {
