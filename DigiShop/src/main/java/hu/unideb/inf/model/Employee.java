@@ -49,8 +49,8 @@ public class Employee implements Serializable {
     @Column(nullable = false)
     private String status;
     
-    @Temporal(javax.persistence.TemporalType.DATE)
-    private Date dob;
+    
+    private String dob;
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date employmentDate;
     
@@ -101,11 +101,11 @@ public class Employee implements Serializable {
         this.city = city;
     }
 
-    public Date getDob() {
+    public String getDob() {
         return dob;
     }
 
-    public void setDob(Date dob) {
+    public void setDob(String dob) {
         this.dob = dob;
     }
 
