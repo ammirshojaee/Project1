@@ -7,6 +7,7 @@ package hu.unideb.inf;
 
 import hu.unideb.inf.model.AddProducts;
 import hu.unideb.inf.model.Category;
+import hu.unideb.inf.model.Sales;
 import java.util.List;
 
 /**
@@ -19,5 +20,6 @@ public interface ProductDAO extends AutoCloseable{
       public void updateProduct(AddProducts a);
        public List<AddProducts> getProducts();
        public List<Category> getCategory();
+        public List<Sales> getSales();
 }
    

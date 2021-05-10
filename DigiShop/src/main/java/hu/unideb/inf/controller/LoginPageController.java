@@ -107,10 +107,10 @@ String name="admin";
                     
                     else{
                     JOptionPane.showMessageDialog(null,"Login Successful");
-                    FXMLLoader loader = new FXMLLoader(LoginPageController.class.getResource("/fxml/CashierMain.fxml"));
+                    FXMLLoader loader = new FXMLLoader(LoginPageController.class.getResource("/fxml/Cashierdashboard.fxml"));
                     stage=(Stage)((Node)event.getSource()).getScene().getWindow();
                     scene= new Scene(loader.load());
-                    hu.unideb.inf.controller.CashierMainController cashcontrol =loader.getController();
+                    hu.unideb.inf.controller.CashierdashboardController cashcontrol =loader.getController();
                     cashcontrol.show(a.getName());
                     stage.setScene(scene);
                     stage.setTitle("Cashier Page");

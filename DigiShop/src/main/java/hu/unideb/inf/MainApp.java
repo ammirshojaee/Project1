@@ -9,7 +9,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import org.h2.tools.Server;
-/*hj*/
+/*hj  Cashierdashboard*/
 public class MainApp extends Application {
 
     @Override
