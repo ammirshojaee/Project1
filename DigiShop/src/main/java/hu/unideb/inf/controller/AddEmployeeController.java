@@ -11,6 +11,8 @@ import hu.unideb.inf.model.Employee;
 import hu.unideb.inf.model.Employee.RankType;
 import hu.unideb.inf.model.Login_User;
 import java.net.URL;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
@@ -104,7 +106,9 @@ public class AddEmployeeController implements Initializable  {
         }
         red.setEmail(mail.getText());
         red.setPosition(rank.getValue());
-        red.setDob(current);
+        
+        
+        red.setDob(dob.getValue().toString());
         red.setStatus(mstatus.getValue());
         
         try (EmployeeDAO aDAO= new JpaEmployeeDAO()){
