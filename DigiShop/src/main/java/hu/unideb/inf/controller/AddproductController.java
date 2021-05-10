@@ -10,6 +10,7 @@ import hu.unideb.inf.JPAproductDAO;
 import hu.unideb.inf.ProductDAO;
 import hu.unideb.inf.model.AddProducts;
 import hu.unideb.inf.model.Category;
+import hu.unideb.inf.model.Sales;
 import java.net.URL;
 import java.util.Date;
 import java.util.List;
@@ -61,9 +62,19 @@ Date currentdate=new Date();
        dew.setPrice(Double.parseDouble(price.getText()));
        dew.setQuantity(Integer.parseInt(pQuantity.getText()));
        dew.setEntryDate(currentdate);
+       Sales ss=new Sales();
+       dew.setSale(ss);
+           ss.setProducts(dew);
+           ss.setNumberSold(0);
+           
        boolean found=false;
        try (ProductDAO aDAO= new JPAproductDAO()){
-       aDAO.saveProduct(dew);
+       
+           
+            aDAO.saveProduct(dew);
+           ((JPAproductDAO)aDAO).saveSales(ss);
+         
+         
        List<Category> kList =aDAO.getCategory();
          for (Category cat: kList){
                if(cat.getCatName().equals(category.getValue())){

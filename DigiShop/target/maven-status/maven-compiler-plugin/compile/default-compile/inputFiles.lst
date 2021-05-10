@@ -1,4 +1,5 @@
 C:\Users\KIMBERLET EPELLE\Documents\NetBeansProjects\Project1\DigiShop\src\main\java\hu\unideb\inf\controller\FXMLCashierSceneController.java
+C:\Users\KIMBERLET EPELLE\Documents\NetBeansProjects\Project1\DigiShop\src\main\java\hu\unideb\inf\controller\CashierdashboardController.java
 C:\Users\KIMBERLET EPELLE\Documents\NetBeansProjects\Project1\DigiShop\src\main\java\hu\unideb\inf\controller\ViewProductsController.java
 C:\Users\KIMBERLET EPELLE\Documents\NetBeansProjects\Project1\DigiShop\src\main\java\hu\unideb\inf\MainApp.java
 C:\Users\KIMBERLET EPELLE\Documents\NetBeansProjects\Project1\DigiShop\src\main\java\hu\unideb\inf\UserDAO.java
@@ -16,12 +17,13 @@ C:\Users\KIMBERLET EPELLE\Documents\NetBeansProjects\Project1\DigiShop\src\main\
 C:\Users\KIMBERLET EPELLE\Documents\NetBeansProjects\Project1\DigiShop\src\main\java\hu\unideb\inf\JpaCashierDAO.java
 C:\Users\KIMBERLET EPELLE\Documents\NetBeansProjects\Project1\DigiShop\src\main\java\hu\unideb\inf\ProductDAO.java
 C:\Users\KIMBERLET EPELLE\Documents\NetBeansProjects\Project1\DigiShop\src\main\java\hu\unideb\inf\model\Cashier.java
+C:\Users\KIMBERLET EPELLE\Documents\NetBeansProjects\Project1\DigiShop\src\main\java\hu\unideb\inf\model\Sales.java
 C:\Users\KIMBERLET EPELLE\Documents\NetBeansProjects\Project1\DigiShop\src\main\java\hu\unideb\inf\controller\LoginPageController.java
 C:\Users\KIMBERLET EPELLE\Documents\NetBeansProjects\Project1\DigiShop\src\main\java\hu\unideb\inf\controller\ProfileController.java
 C:\Users\KIMBERLET EPELLE\Documents\NetBeansProjects\Project1\DigiShop\src\main\java\hu\unideb\inf\model\Employee.java
 C:\Users\KIMBERLET EPELLE\Documents\NetBeansProjects\Project1\DigiShop\src\main\java\hu\unideb\inf\controller\AdminPageController.java
 C:\Users\KIMBERLET EPELLE\Documents\NetBeansProjects\Project1\DigiShop\src\main\java\hu\unideb\inf\controller\AddproductController.java
+C:\Users\KIMBERLET EPELLE\Documents\NetBeansProjects\Project1\DigiShop\src\main\java\hu\unideb\inf\controller\CashierproductspageController.java
 C:\Users\KIMBERLET EPELLE\Documents\NetBeansProjects\Project1\DigiShop\src\main\java\hu\unideb\inf\CashierDAO.java
 C:\Users\KIMBERLET EPELLE\Documents\NetBeansProjects\Project1\DigiShop\src\main\java\hu\unideb\inf\EmployeeDAO.java
 C:\Users\KIMBERLET EPELLE\Documents\NetBeansProjects\Project1\DigiShop\src\main\java\hu\unideb\inf\JPAproductDAO.java
-

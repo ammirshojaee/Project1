@@ -9,6 +9,7 @@ package hu.unideb.inf.controller;
 import hu.unideb.inf.JPAproductDAO;
 import hu.unideb.inf.ProductDAO;
 import hu.unideb.inf.model.AddProducts;
+import hu.unideb.inf.model.Sales;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
@@ -159,20 +160,25 @@ int istep = intFactory.getAmountToStepBy();
     
     @FXML
     void printreceipt(ActionEvent event) throws Exception{
-        Date cur=new Date();
+        Date cur=new Date();int sold=0;
         int input=  JOptionPane.showConfirmDialog(null, "Would you like to continue?");
       if(input==0){
         try (ProductDAO aDAO= new JPAproductDAO()) {
-        List<AddProducts> aList =aDAO.getProducts();
-           for (AddProducts prod: aList ){
-             for(AddProducts dd: data){
+                List<AddProducts> aList =aDAO.getProducts();
+                for (AddProducts prod: aList ){
+                    for(AddProducts dd: data){
                      if(prod.getId().equals(dd.getId())) {
-              int k=prod.getQuantity()-dd.getQuantity();
-                         prod.setQuantity(k) ;
-                       aDAO.updateProduct(prod);
-                                System.out.println( k) ;}
-             } 
-           }}
+                            int k=prod.getQuantity()-dd.getQuantity();
+                            prod.setQuantity(k) ;
+                           sold=dd.getQuantity();
+                           prod.getSale().setNumberSold(sold+prod.getSale().getNumberSold());
+                           aDAO.updateProduct(prod);
+                           
+                     }
+               }
+                    } 
+              
+        }
         
 receipt.setText(receipt.getText()+"========================="+"\n"+
         "Total:"+"\t\t\t"+total.getText()+"\n"+"========================="+"\n"+cur.toString());
@@ -190,7 +196,7 @@ receipt.setText(receipt.getText()+"========================="+"\n"+
       
       }
     }
-
+        
     /**
      * Initializes the controller class.
      */

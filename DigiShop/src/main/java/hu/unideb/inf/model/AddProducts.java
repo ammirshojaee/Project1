@@ -7,12 +7,14 @@ package hu.unideb.inf.model;
 
 import java.io.Serializable;
 import java.util.Date;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 
 /**
@@ -37,6 +39,8 @@ public class AddProducts implements Serializable {
 
         @ManyToOne
         private Category category;
+        @OneToOne(cascade = CascadeType.ALL)
+        private Sales sale;
     
     public Long getId() {
         return id;
@@ -68,6 +72,14 @@ public class AddProducts implements Serializable {
 
     public void setCategory(Category category) {
         this.category = category;
+    }
+
+    public Sales getSale() {
+        return sale;
+    }
+
+    public void setSale(Sales sale) {
+        this.sale = sale;
     }
 
     

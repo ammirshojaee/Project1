@@ -7,6 +7,7 @@
     <class>hu.unideb.inf.model.AddProducts</class>
     <class>hu.unideb.inf.model.Category</class>
     <class>hu.unideb.inf.model.Employee</class>
+    <class>hu.unideb.inf.model.Sales</class>
     <exclude-unlisted-classes>true</exclude-unlisted-classes>
     <properties>
       <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>

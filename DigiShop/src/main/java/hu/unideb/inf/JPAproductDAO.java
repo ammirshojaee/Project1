@@ -7,6 +7,7 @@ package hu.unideb.inf;
 
 import hu.unideb.inf.model.AddProducts;
 import hu.unideb.inf.model.Category;
+import hu.unideb.inf.model.Sales;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -47,6 +48,13 @@ final EntityManager entityManager = entityManagerFactory.createEntityManager();
     entityManager.getTransaction().commit(); 
     }
 
+    public void saveSales(Sales a) {
+    entityManager.getTransaction().begin();
+    entityManager.persist(a);
+    entityManager.getTransaction().commit(); 
+    }
+
+    
     @Override
     public List<AddProducts> getProducts() {
     TypedQuery<AddProducts> query
@@ -63,10 +71,18 @@ final EntityManager entityManager = entityManagerFactory.createEntityManager();
     return as;
     }
 
+   
+
     @Override
+    public List<Sales> getSales() {
+   TypedQuery<Sales> query
+              = entityManager.createQuery("SELECT a FROM Sales a",Sales.class);
+    List<Sales> as = query.getResultList();
+    return as;
+    }
+     @Override
     public void close() throws Exception {
     entityManager.close();
     entityManagerFactory.close();
     }
-    
 }
