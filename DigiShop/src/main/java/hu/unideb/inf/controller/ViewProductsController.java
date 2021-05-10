@@ -8,6 +8,7 @@ package hu.unideb.inf.controller;
 import hu.unideb.inf.JPAproductDAO;
 import hu.unideb.inf.ProductDAO;
 import hu.unideb.inf.model.AddProducts;
+import hu.unideb.inf.model.Sales;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -56,7 +57,6 @@ public class ViewProductsController implements Initializable {
         ProductDAO aDAO= new JPAproductDAO();
          ObservableList<AddProducts> data =FXCollections.observableArrayList();
          List<AddProducts> aList =aDAO.getProducts();
-         
            for (AddProducts prod: aList ){
                data.add(prod);
               pid.setCellValueFactory(new PropertyValueFactory<>("id"));
@@ -64,10 +64,8 @@ public class ViewProductsController implements Initializable {
                 pPrice.setCellValueFactory(new PropertyValueFactory<>("price"));
                 pquantity.setCellValueFactory(new PropertyValueFactory<>("Quantity"));
                pdescription.setCellValueFactory(new PropertyValueFactory<>("description"));
-              
-               prodview.setItems(data);
+             prodview.setItems(data);
            }
-        // TODO
     }    
     
 }
