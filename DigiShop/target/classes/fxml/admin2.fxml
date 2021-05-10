@@ -3,6 +3,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -11,9 +12,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="MainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="523.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.unideb.inf.controller.AdminPageController">
+<BorderPane fx:id="MainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="523.0" prefWidth="900.0" stylesheets="@../styles/adminpage.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.unideb.inf.controller.AdminPageController">
    <left>
-      <VBox prefHeight="497.0" prefWidth="187.0" style="-fx-background-color: blue;" BorderPane.alignment="CENTER">
+      <VBox prefHeight="523.0" prefWidth="196.0" style="-fx-background-color: #89CFF0;" stylesheets="@../styles/adminpage.css" BorderPane.alignment="CENTER">
          <children>
             <GridPane prefHeight="439.0" prefWidth="180.0">
               <columnConstraints>
@@ -32,51 +33,75 @@
                   <RowConstraints maxHeight="35.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Label prefHeight="29.0" prefWidth="73.0" text="DIGISHOP" />
-                  <Label layoutX="10.0" layoutY="38.0" text="EMPLOYEES" GridPane.rowIndex="3">
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="35.0" prefWidth="139.0" stylesheets="@../styles/adminpage.css" text="DIGISHOP">
+                     <GridPane.margin>
+                        <Insets left="35.0" />
+                     </GridPane.margin>
                      <font>
-                        <Font size="24.0" />
+                        <Font name="Cambria Bold" size="24.0" />
+                     </font></Label>
+                  <Label layoutX="10.0" layoutY="38.0" stylesheets="@../styles/adminpage.css" text="EMPLOYEES" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="Cambria" size="18.0" />
                      </font>
                   </Label>
-                  <Label layoutX="10.0" layoutY="38.0" text="PRODUCTS" GridPane.rowIndex="6">
+                  <Label layoutX="10.0" layoutY="38.0" stylesheets="@../styles/adminpage.css" text="PRODUCTS" GridPane.rowIndex="6">
                      <font>
-                        <Font size="24.0" />
+                        <Font name="Cambria" size="18.0" />
                      </font>
                   </Label>
-                  <Button mnemonicParsing="false" onAction="#viewcashier" prefHeight="35.0" prefWidth="159.0" text="View Employees" GridPane.rowIndex="5">
+                  <Button mnemonicParsing="false" onAction="#viewcashier" prefHeight="35.0" prefWidth="159.0" stylesheets="@../styles/adminpage.css" text="View Employees" GridPane.rowIndex="5">
                      <font>
                         <Font size="16.0" />
                      </font>
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#modprod" prefHeight="35.0" prefWidth="160.0" text="Modify Products" GridPane.rowIndex="7">
+                  <Button mnemonicParsing="false" onAction="#modprod" prefHeight="35.0" prefWidth="160.0" stylesheets="@../styles/adminpage.css" text="Modify Products" GridPane.rowIndex="7">
                      <font>
                         <Font size="16.0" />
                      </font>
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#modcashier" prefHeight="35.0" prefWidth="155.0" text="Modify Employees" GridPane.rowIndex="4">
+                  <Button mnemonicParsing="false" onAction="#modcashier" prefHeight="35.0" prefWidth="159.0" stylesheets="@../styles/adminpage.css" text="Modify Employees" GridPane.rowIndex="4">
                      <font>
                         <Font size="16.0" />
                      </font>
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#viewprod" prefHeight="35.0" prefWidth="159.0" text="View Products" GridPane.rowIndex="8">
+                  <Button mnemonicParsing="false" onAction="#viewprod" prefHeight="35.0" prefWidth="159.0" stylesheets="@../styles/adminpage.css" text="View Products" GridPane.rowIndex="8">
                      <font>
                         <Font size="16.0" />
                      </font>
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
                   </Button>
-                  <Label fx:id="adminname" layoutX="10.0" layoutY="19.0" prefHeight="29.0" prefWidth="113.0" text="NAME" GridPane.rowIndex="1">
+                  <Label fx:id="adminname" layoutX="10.0" layoutY="19.0" prefHeight="29.0" prefWidth="177.0" stylesheets="@../styles/adminpage.css" text="NAME" GridPane.rowIndex="1">
                      <font>
-                        <Font size="16.0" />
+                        <Font name="Cambria" size="18.0" />
                      </font>
                   </Label>
-                  <Button layoutX="10.0" layoutY="350.0" mnemonicParsing="false" onAction="#goBack" prefHeight="69.0" prefWidth="159.0" text="Exit" GridPane.rowIndex="9">
+                  <Button layoutX="10.0" layoutY="350.0" mnemonicParsing="false" onAction="#goBack" prefHeight="69.0" prefWidth="159.0" stylesheets="@../styles/adminpage.css" text="Exit" GridPane.rowIndex="9">
                      <font>
                         <Font size="16.0" />
                      </font>
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
                   </Button>
-                  <Button layoutX="10.0" layoutY="168.0" mnemonicParsing="false" onAction="#viewprofile" prefHeight="35.0" prefWidth="155.0" text="My Profile" GridPane.rowIndex="2">
+                  <Button layoutX="10.0" layoutY="168.0" mnemonicParsing="false" onAction="#viewprofile" prefHeight="35.0" prefWidth="159.0" stylesheets="@../styles/adminpage.css" text="My Profile" GridPane.rowIndex="2">
                      <font>
                         <Font size="16.0" />
                      </font>
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
                   </Button>
                </children>
             </GridPane>
@@ -87,6 +112,9 @@
          <BorderPane.margin>
             <Insets />
          </BorderPane.margin>
+         <effect>
+            <DropShadow />
+         </effect>
       </VBox>
    </left>
    <center>
@@ -99,4 +127,5 @@
          </opaqueInsets>
       </Pane>
    </center>
+  
 </BorderPane>
