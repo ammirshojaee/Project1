@@ -14,7 +14,7 @@
 
 <BorderPane fx:id="MainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="523.0" prefWidth="900.0" stylesheets="@../styles/adminpage.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.unideb.inf.controller.AdminPageController">
    <left>
-      <VBox prefHeight="523.0" prefWidth="196.0" style="-fx-background-color: #89CFF0;" stylesheets="@../styles/adminpage.css" BorderPane.alignment="CENTER">
+      <VBox prefHeight="523.0" prefWidth="196.0" style="-fx-background-color: #0598ff;" stylesheets="@../styles/adminpage.css" BorderPane.alignment="CENTER">
          <children>
             <GridPane prefHeight="439.0" prefWidth="180.0">
               <columnConstraints>
