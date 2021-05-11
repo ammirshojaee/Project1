@@ -126,13 +126,12 @@ System.out.println("You clicked me!");
     }
     @FXML 
     void handleButtonAction(ActionEvent event) throws IOException{
-     FXMLLoader loader = new FXMLLoader(LoginPageController.class.getResource("/fxml/Cashierproductspage.fxml"));
-        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(loader.load());
-   
-        stage.setTitle("products with pictures");
-        stage.setScene(scene);
-        stage.show();
+     System.out.println("You clicked me!");
+   System.out.println("You clicked me!");
+    FXMLLoader loader = new FXMLLoader(LoginPageController.class.getResource("/fxml/Cashierproductspage.fxml"));
+    Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+       MainPane.setCenter(loader.load());
+       stage.show();
     }
     
     /**

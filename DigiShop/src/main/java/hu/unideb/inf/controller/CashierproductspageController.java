@@ -7,6 +7,8 @@ package hu.unideb.inf.controller;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 
 /**
@@ -15,6 +17,10 @@ import javafx.fxml.Initializable;
  * @author amirs
  */
 public class CashierproductspageController implements Initializable {
+       @FXML
+    void back(ActionEvent event) {
+
+    }
 
     /**
      * Initializes the controller class.
