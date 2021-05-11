@@ -76,7 +76,7 @@ String name="admin";
                 }
                 else{
                     if(user.getPassword().equalsIgnoreCase(name)){
-                   JOptionPane.showMessageDialog(null,"Login Successful");
+                   JOptionPane.showMessageDialog(null,"Successful Login");
                     
                    FXMLLoader loader = new FXMLLoader(LoginPageController.class.getResource("/fxml/admin2.fxml"));
                     
@@ -91,7 +91,7 @@ String name="admin";
                     break;
                     }
                     else if(user.getEmployee().getPosition().toString().equalsIgnoreCase(name)){
-                   JOptionPane.showMessageDialog(null,"Login Successful");
+                   JOptionPane.showMessageDialog(null,"Successful Login");
                    FXMLLoader loader = new FXMLLoader(LoginPageController.class.getResource("/fxml/admin2.fxml"));
                   stage=(Stage)((Node)event.getSource()).getScene().getWindow();
                     scene= new Scene(loader.load());
@@ -106,7 +106,7 @@ String name="admin";
                     }
                     
                     else{
-                    JOptionPane.showMessageDialog(null,"Login Successful");
+                    JOptionPane.showMessageDialog(null,"Successful Login");
                     FXMLLoader loader = new FXMLLoader(LoginPageController.class.getResource("/fxml/Cashierdashboard.fxml"));
                     stage=(Stage)((Node)event.getSource()).getScene().getWindow();
                     scene= new Scene(loader.load());
@@ -121,7 +121,7 @@ String name="admin";
                 }   
             }
         if(found==false){
-            JOptionPane.showMessageDialog(null, "not available");
+            JOptionPane.showMessageDialog(null, "Admin not registered in the system");
         }
         for (Login_User user: aList ){
                 System.out.println(user);
