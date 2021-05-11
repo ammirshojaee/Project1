@@ -25,8 +25,11 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
+import javax.swing.JOptionPane;
 import org.h2.engine.User;
-
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 /**
  *
  * @author KIMBERLET EPELLE
@@ -121,8 +124,18 @@ public class AddEmployeeController implements Initializable  {
              dew.setName(u1+u2);
              dew.setPassword(rank.getValue().toString());
              dew.setEmployee(red);
-             ((JpaEmployeeDAO)aDAO).saveUser(dew);
-             System.out.println(u1+u2);
+                 JFrame frame = new JFrame("frame");
+
+             
+        
+             try {
+ ((JpaEmployeeDAO)aDAO).saveUser(dew);
+ JOptionPane.showMessageDialog(frame,"employees has  been created ");
+}
+catch(Exception e) {
+  JOptionPane.showMessageDialog(frame,e+"employees has not been created cauz");
+}
+             System.out.println(u1+u2+"---------------------------------------------------------------------------------------------------");
          }
         
     }
